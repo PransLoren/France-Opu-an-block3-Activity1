@@ -37,6 +37,11 @@ class MainActivity : AppCompatActivity() {
             currentTime = 10
             currentClicks = 0
 
+            btn_start.isEnabled = false
+            btn_click.isEnabled = true
+
+            time.start()
+
         }
 
         btn_click.setOnClickListener{
