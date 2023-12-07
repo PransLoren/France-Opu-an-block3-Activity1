@@ -1,6 +1,6 @@
 package com.opuan.france.block3.p1.quiz1
 
-
+import android.media.MediaPlayer
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -19,21 +19,21 @@ class MainActivity : AppCompatActivity() {
     var currentClicks = 0
 
     lateinit var time: CountDownTimer
-
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
 
         timer = findViewById(R.id.timer)
         clicks = findViewById(R.id.clicks)
-
+        var mediaPlayer: MediaPlayer = MediaPlayer.create(this, R.raw.click)
         btn_start = findViewById(R.id.btn_start)
         btn_click = findViewById(R.id.btn_click)
 
         btn_click.isEnabled = false
 
         btn_start.setOnClickListener{
+
+            mediaPlayer.start()
 
             currentTime = 10
             currentClicks = 0
@@ -52,6 +52,8 @@ class MainActivity : AppCompatActivity() {
             currentClicks++;
             clicks.text = "Clicks: $currentClicks"
 
+            mediaPlayer.start()
+
         }
 
         time = object : CountDownTimer(10000, 1000){
@@ -68,8 +70,6 @@ class MainActivity : AppCompatActivity() {
                 btn_start.isEnabled = true
                 btn_click.isEnabled = false
             }
-
         }
     }
-
 }
