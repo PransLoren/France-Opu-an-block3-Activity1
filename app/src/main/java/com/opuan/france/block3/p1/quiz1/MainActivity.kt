@@ -1,6 +1,6 @@
 package com.opuan.france.block3.p1.quiz1
 
-import android.annotation.SuppressLint
+
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.CountDownTimer
@@ -34,8 +34,12 @@ class MainActivity : AppCompatActivity() {
         btn_click.isEnabled = false
 
         btn_start.setOnClickListener{
+
             currentTime = 10
             currentClicks = 0
+
+            timer.text = "Time: $currentTime"
+            clicks.text = "Clicks: $currentClicks"
 
             btn_start.isEnabled = false
             btn_click.isEnabled = true
@@ -45,6 +49,8 @@ class MainActivity : AppCompatActivity() {
         }
 
         btn_click.setOnClickListener{
+            currentClicks++;
+            clicks.text = "Clicks: $currentClicks"
 
         }
 

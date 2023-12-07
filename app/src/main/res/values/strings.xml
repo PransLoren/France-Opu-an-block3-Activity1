@@ -4,4 +4,5 @@
     <string name="start">Start</string>
     <string name="timer_0">Timer : 0</string>
     <string name="clicks_0">Clicks: 0</string>
+    <string name="timer_10">Timer: 10</string>
 </resources>
